@@ -1,1 +1,1 @@
-# los-sonar-java
+# los-sample-java
