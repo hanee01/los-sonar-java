@@ -1,5 +1,8 @@
 version: 0.2
-
+env:
+  parameter-store:
+    SONAR_LOGIN: "/los/sonar-token"
+    SONAR_HOST: "M/los/sonar-url"
 phases:
   install:
     runtime-versions:
@@ -14,7 +17,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn sonar:sonar -Dsonar.host.url=http://ec2-3-94-168-153.compute-1.amazonaws.com -Dsonar.login=4b10472faeabd02e136783eba7a052c02e0ff79a -Dsonar.login=admin -Dsonar.password=admin
+      - mvn sonar:sonar -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_LOGIN -Dsonar.login=admin -Dsonar.password=admin
 artifacts:
   files:
     - target/messageUtil-1.0.jar
