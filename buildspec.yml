@@ -13,7 +13,8 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package sonar:sonar -Dsonar.host.url=ec2-3-230-26-162.compute-1.amazonaws.com -Dsonar.login=93c807805de1d6078eaff02a7b0259a77a85a508 -Dsonar.login=admin -Dsonar.password=admin
+      - mvn package sonar:sonar -Dsonar.host.url=http://3.230.66.65 -Dsonar.login=be1c0e01a2a9dd7107a82f805fb8ddc7fe38ff8e -Dsonar.login=sonarqube -Dsonar.password=Idxsq@123
+  pre_build:
 artifacts:
   files:
     - target/messageUtil-1.0.jar
